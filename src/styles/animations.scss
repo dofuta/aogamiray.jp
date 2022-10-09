@@ -1,0 +1,89 @@
+@mixin keyframes($animation-name) {
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+@mixin animation($animation-name, $animation-count:'1', $animation-delay: '0') {
+  -webkit-animation: $animation-name;
+  animation: $animation-name;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: $animation-count;
+  animation-iteration-count: $animation-count;
+  animation-delay: $animation-delay;
+  -webkit-animation-delay: $animation-delay;
+}
+
+@include keyframes(fadeIn) {
+  0% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+@include keyframes(hopping) {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@include keyframes(popIn) {
+  0% {
+    opacity: 0;
+    transform: translateY(vw_mobile(-30));
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@include keyframes(popOut) {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  15% {
+    opacity: 0;
+    transform: translateY(vw_mobile(-30));
+  }
+  16% {
+    // HACK: ライブラリで使っているToasterのアニメーションがバグってるので、2秒で設定してこっちの%で実質0.3秒にしている。
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@include keyframes(rotate) {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@include keyframes(slide) {
+  0% {
+    transform: translateX(-100%);
+  }
+  10% {
+    transform: translateX(-100%);
+  }
+  90% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

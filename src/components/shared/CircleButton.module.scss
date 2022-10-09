@@ -1,0 +1,46 @@
+.circleButton {
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    display: inline-block;
+    @include mobile {
+        border-radius: vw_mobile(30);
+    }
+    @include pc {
+        border-radius: vw_pc(25);
+    }
+    .circleSVG {
+        cursor: pointer;
+        @include mobile {
+            height: vw_mobile(50);
+        }
+        @include pc {
+            height: vw_pc(50);
+        }
+    }
+    span {
+        font-weight: $bold;
+        @include mobile {
+            @include font-size_mobile(16);
+        }
+        @include pc {
+            margin-left: vw_pc(18);
+            line-height: vw_pc(50);
+            @include font-size_pc(16);
+        }
+    }
+    color: $black;
+    &.white {
+        color: $white;
+        .circleSVG {
+            g {
+                rect {
+                    fill: $white;
+                }
+                path {
+                    fill: $black;
+                }
+            }
+        }
+    }
+}

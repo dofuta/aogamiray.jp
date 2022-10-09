@@ -1,0 +1,73 @@
+@import "mixins/css3";
+@import "mixins/breakpoints";
+@import "mixins/position";
+
+@mixin font-face($fontName, $folderName, $fileName, $fontWeight: normal, $fontStyle: normal){
+  @font-face {
+    font-family: $fontName;
+    src: url('~static/assets/fonts/#{$folderName}/#{$fileName}.woff2') format('woff2'),
+         url('~static/assets/fonts/#{$folderName}/#{$fileName}.woff') format('woff');
+    font-weight: $fontWeight;
+    font-style: $fontStyle;
+    font-display: swap;
+  }
+}
+
+// px to rem;
+@function rem($px) {
+  @return math.div($px, $baseFontSize) * 1rem;
+}
+
+// pc or larger
+@mixin pc() {
+  @media screen and (min-width: #{$thresholdScreenWidth + 1}px) {
+    @content;
+  }
+}
+@function vw_pc($px) {
+  @return math.div($px, $baseScreenWidthPc) * 100 + vw;
+}
+@mixin font-size_pc($px){
+  font-size: math.div($px, $baseScreenWidthPc) * 100 + vw
+}
+
+// mobile
+@mixin mobile() {
+  @media screen and (max-width: #{$thresholdScreenWidth}px) {
+    @content;
+  }
+}
+
+// HACK: fixedScreenWidthを超えると、固定幅になるように、min()を使って無理やり実装。
+// @function vw_mobile($px) {
+//   @return min(calc(#{math.div($px, $baseScreenWidthMobile) * $fixedScreenWidth}px), calc(#{math.div($px, $baseScreenWidthMobile) * 100}vw));
+// }
+// TODO: 本来は以下が綺麗。
+@function vw_mobile($px) {
+  @return math.div($px, $baseScreenWidthMobile) * 100 + vw;
+}
+
+// HACK: fixedScreenWidthを超えると、固定になるように、メディアクエリを使って実装。
+// HACK: inputフィールドは、16px以下になると、フォーカスが当たった時に、ズームされてしまうので、inputフィールドの時は第二引数をtrueにする。
+//       そうすると、minimumで16pxを保つ
+// @mixin font-size_mobile($px, $input: false){
+//   @if ($input == true) {
+//     @media screen and (max-width: #{$fixedScreenWidth}px) {
+//       font-size: clamp(16px, math.div($px, $baseScreenWidthMobile) * 100vw, math.div($px, $baseScreenWidthMobile) * 100vw);
+//     }
+//     @media screen and (min-width: #{$fixedScreenWidth + 1}px) {
+//       font-size: max(16px, #{math.div($px, $baseScreenWidthMobile) * $fixedScreenWidth}px);
+//     }
+//   } @else {
+//     @media screen and (max-width: #{$fixedScreenWidth}px) {
+//       font-size: math.div($px, $baseScreenWidthMobile) * 100 + vw;
+//     }
+//     @media screen and (min-width: #{$fixedScreenWidth + 1}px) {
+//       font-size: math.div($px, $baseScreenWidthMobile) * $fixedScreenWidth + px;
+//     }
+//   }
+// }
+// TODO: 本来は以下が綺麗。
+@mixin font-size_mobile($px){
+  font-size: math.div($px, $baseScreenWidthMobile) * 100 + vw
+}

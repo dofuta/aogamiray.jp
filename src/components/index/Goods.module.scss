@@ -1,0 +1,48 @@
+.container {
+  // background-color: red;
+  .goodsList {
+    justify-content: space-between;
+    display: flex;
+    width: 100%;
+    .item {
+      position: relative;
+      @include mobile {
+      }
+      @include pc {
+        width: 28%;
+      }
+      .imageWrapper {
+        position: relative;
+        @include mobile {
+          width: vw_mobile(340);
+          height: vw_mobile(340);
+        }
+        @include pc {
+          width: vw_pc(340);
+          height: vw_pc(340);
+        }
+      }
+      .title {
+        line-height: 1.4;
+        color: $gray;
+        @include mobile {
+          @include font-size_mobile(16);
+        }
+        @include pc {
+          padding: vw_pc(10) 0;
+          @include font-size_pc(20);
+        }
+      }
+      .price {
+        line-height: 1.4;
+        color: $gray;
+        @include mobile {
+          @include font-size_mobile(16);
+        }
+        @include pc {
+          @include font-size_pc(20);
+        }
+      }
+    }
+  }
+}

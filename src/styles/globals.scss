@@ -1,0 +1,63 @@
+html {
+  // height: auto;
+  background-color: $background-white;
+  transition: color 0.5s, opacity 0.5s, background-color 0.5s;
+  body {
+    color: $black;
+    // font-family: 'Noto Sans', sans-serif;
+    // font-family: 'Noto Sans JP', sans-serif;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+    // font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    // overscroll-behavior: none;
+    // height: 100vh;
+    // height: 100svh;
+    width: 100%;
+    letter-spacing: 0.2rem;
+  }
+  overflow: scroll;
+  &.dark {
+    background-color: $dark-black;
+  }
+  ::selection {
+    background-color: $gray;
+    color: $white;
+  }
+}
+
+// hoverアニメーション
+.hoverable {
+  transition: all 0.3s ease;
+  &:hover {
+    opacity: 0.6;
+    transition: all 0.3s ease;
+  }
+}
+
+// クリックアニメーション
+.clickable {
+  transition: all 0.3s ease;
+  &:active {
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+  }
+}
+
+// フェードインアニメーション
+.fadeIn {
+  @include animation(fadeIn 0.8s);
+}
+
+// PCサイズのみ表示
+.only_pc {
+  @include mobile() {
+    display: none;
+  }
+}
+
+// モバイルサイズのみ表示
+.only_sp {
+  @include pc() {
+    display: none;
+  }
+}

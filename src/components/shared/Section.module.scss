@@ -1,0 +1,87 @@
+.container {
+    @include mobile {
+        padding: vw_mobile(20);
+        margin-top: vw_mobile(120);
+    }
+    @include pc {
+        padding: vw_pc(20) vw_pc(40);
+        margin-top: vw_pc(120);
+    }
+    .top {
+        .title {
+            font-weight: $bold;
+            letter-spacing: 0.3rem;
+            @include mobile {
+                @include font-size_mobile(50);
+            }
+            @include pc {
+                @include font-size_pc(50);
+            }
+            display: flex;
+            align-items: center;
+            span {
+                @include mobile {
+                    @include font-size_mobile(16);
+                }
+                @include pc {
+                    margin-left: vw_pc(70);
+                    @include font-size_pc(20);
+                    padding: vw_pc(15) 0;
+                }
+                position: relative;
+                &:before {
+                    content: '';
+                    @include pc {
+                        position: absolute;
+                        left: vw_pc(-60);
+                        bottom: vw_pc(27.5);
+                        width: vw_pc(50);
+                        background-color: $black;
+                        border: 0.5px solid $black;
+                    }
+    
+                }
+            }
+        }
+    }
+    .bottom {
+        @include mobile {
+            padding-top: vw_mobile(30);
+            padding-bottom: vw_mobile(30);
+        }
+        @include pc {
+            padding-top: vw_pc(20);
+            padding-bottom: vw_pc(50);
+        }
+        display: flex;
+        &__left {
+            width: 50%;
+            p {
+                line-height: 1.4;
+                font-weight: $bold;
+                @include mobile {
+                    @include font-size_mobile(18);
+                }
+                @include pc {
+                    @include font-size_pc(18);
+                }
+            }
+        }
+        &__right {
+            width: 50%;
+            position: relative;
+            .button {
+                position: absolute;
+                right: 0;
+            }
+        }
+    }
+    .content {
+        @include mobile {
+        }
+        @include pc {
+            margin-top: vw_pc(20);
+            padding: 0 vw_pc(50);
+        }
+    }
+}

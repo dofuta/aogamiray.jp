@@ -1,0 +1,20 @@
+.container {
+    .items {
+        display: flex;
+        justify-content: space-between;
+        .item {
+            .imageWrapper {
+                border-radius: 1rem;
+                overflow: hidden;
+                background-color: $white;
+                position: relative;
+                @include mobile {
+                }
+                @include pc {
+                    width: vw_pc(250);
+                    height: vw_pc(150);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,106 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 10;
+    transition: color 0.5s, opacity 0.5s, background-color 0.5s;
+    .brandLogo {
+        position: relative;
+        @include mobile {
+            width: 30%;
+            padding: vw_mobile(20);
+        }
+        @include pc {
+            width: 50%;
+            padding: vw_pc(20) vw_pc(60);
+        }
+        .image {
+            cursor: pointer;
+            @include mobile {
+                // position: absolute;
+                // @include centerY();
+                left: 0;
+                width: vw_mobile(70);
+                height: vw_mobile(70);
+            }
+            @include pc {
+                width: vw_pc(60);
+                height: vw_pc(60);
+            }
+        }
+    }
+    .links {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include mobile {
+            width: 50%;
+            padding: vw_mobile(20);
+            justify-content: flex-end;
+        }
+        @include pc {
+            width: 30%;
+            padding: vw_pc(20) 0;
+        }
+        .link {
+            cursor: pointer;
+            span {
+                position: relative;
+                padding: 0 vw_pc(10);
+                display: inline-block;
+                line-height: vw_pc(30);
+                height: vw_pc(30);
+                color: $black;
+                font-weight: $light;
+                @include mobile {
+                    @include font-size_mobile(20);
+                }
+                @include pc {
+                    @include font-size_pc(18);
+                }
+            }
+        }
+    }
+    .buttonArea {
+        position: relative;
+        @include mobile {
+            width: 20%;
+        }
+        @include pc {
+            width: 20%;
+        }
+        .toggleButton {
+            position: absolute;
+            @include mobile {
+                @include centerY();
+                right: vw_mobile(20);
+            }
+            @include pc {
+                @include centerXY();
+            }            
+        }
+    }
+    &.dark {
+        .image {
+            svg {
+                opacity: 85%;
+                path {
+                    stroke: $white !important;
+                }
+                ellipse {
+                    stroke: $white !important;
+                }
+            }
+        }
+        .link {
+            span {
+                color: $white;
+                opacity: 85%;
+            }
+        }
+    }
+}
