@@ -36,7 +36,7 @@ export default function Home(props) {
                     content='アオガミライは、青ヶ島に暮らす「ヒト」に焦点をあてるWEBメディアです。'
                 />
                 <meta property='og:site_name' content='Aogamiry | アオガミライ' />
-                <meta property='og:image' content='https://www.aogamiry.jp/ogp.png' />
+                <meta property='og:image' content='https://www.aogamiry.jp/ogp.jpg' />
             </Head>
             {/* <StartAnimation /> */}
             <Main
@@ -130,70 +130,70 @@ export async function getStaticProps({ query }) {
     }
     const people = [
         {
-            image: '/images/people/people01.png',
+            image: '/images/people/people01.webp',
         },
         {
-            image: '/images/people/people02.png',
+            image: '/images/people/people02.webp',
         },
         {
-            image: '/images/people/people03.png',
+            image: '/images/people/people03.webp',
         },
         {
-            image: '/images/people/people04.png',
+            image: '/images/people/people04.webp',
         },
     ]
     const goods = [
         {
             title: 'カフェT白印刷',
             price: '3,850円 （税込）',
-            image: '/images/goods/shirts01.jpg',
+            image: '/images/goods/shirts01.webp',
         },
         {
             title: 'Café Aogamiray カフェT',
             price: '2,728円 （税込）',
-            image: '/images/goods/bag01.jpg',
+            image: '/images/goods/bag01.webp',
         },
         {
             title: 'かいゆう',
             price: '3,608円 （税込）',
-            image: '/images/goods/hat01.jpg',
+            image: '/images/goods/hat01.webp',
         },
     ]
     const news = [
         {
-            title: 'Webサイトを公開しました。',
+            title: 'AogamirayのWebサイトを公開しました。',
             date: '2022.10.10',
             content:
-                'Webサイトを公開しました！<br/>Webサイトを公開しました！Webサイトを公開しました！Webサイトを公開しました！Webサイトを公開しました！',
+                'Aogamirayでは人と人、過去と未来、青ヶ島と青ヶ島のファンを繋ぐ活動をしていきます。',
         },
         {
-            title: 'Webサイトを公開しました。',
+            title: 'WebメディアであるHumans of Aogasihmaを公開しました。',
             date: '2022.10.10',
             content:
-                'Webサイトを公開しました！<br/>Webサイトを公開しました！Webサイトを公開しました！Webサイトを公開しました！Webサイトを公開しました！',
+                '私たちが日常を過ごす青ヶ島には多くの魅力的な人々がいます。アオガミライはそんな青ヶ島に暮らす「ヒト」に焦点をあてるWEBメディアです。',
         },
         {
-            title: 'Webサイトを公開しました。',
+            title: 'Humans of Aogashimaに新着コンテンツが追加されました。',
             date: '2022.10.10',
             content:
-                'Webサイトを公開しました！<br/>Webサイトを公開しました！Webサイトを公開しました！Webサイトを公開しました！Webサイトを公開しました！',
+                '青ヶ島でサウナの管理人をやられている広江寛さんの半生と青ヶ島の生活を伺いました。',
         },
     ]
     const supporters = [
         {
             title: '東京宝島',
             url: 'https://www.t-treasureislands.metro.tokyo.lg.jp/',
-            image: '/images/supporters/takarajima.png',
+            image: '/images/supporters/takarajima.webp',
         },
         {
             title: '青ヶ島村',
             url: 'http://www.vill.aogashima.tokyo.jp/',
-            image: '/images/supporters/aogashima.png',
+            image: '/images/supporters/aogashima.webp',
         },
         {
             title: 'suzuri',
             url: 'https://suzuri.jp/kaechan0106/',
-            image: '/images/supporters/suzuri.png',
+            image: '/images/supporters/suzuri.webp',
         },
     ]
     return {

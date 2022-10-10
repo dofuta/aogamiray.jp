@@ -9,10 +9,10 @@ export default function TopVisualSystem(props) {
             <div className={styles.container}>
                 <div className={styles.backgroundImage}>
                     <div className={`${styles.imageWrapper} only_pc`}>
-                        <Image src='/images/top/mountain.jpg' layout='fill' objectFit='cover' />
+                        <Image src='/images/top/mountain.webp' layout='fill' objectFit='cover' />
                     </div>
                     <div className={`${styles.imageWrapper} only_sp`}>
-                        <Image src='/images/top/mountain_sp.jpg' layout='fill' objectFit='cover' />
+                        <Image src='/images/top/mountain_sp.webp' layout='fill' objectFit='cover' />
                     </div>
                 </div>
                 <div className={styles.content}>

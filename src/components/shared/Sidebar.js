@@ -8,7 +8,7 @@ export default function Sidebar(props) {
             <div className={styles.container}>
                 <div className={styles.logoArea}>
                     <div className={styles.imageWrapper}>
-                        <Image src='/icons/logo_short.png' layout='fill' objectFit='cover' />
+                        <Image src='/icons/logo_short.webp' layout='fill' objectFit='cover' />
                     </div>
                 </div>
                 <div className={styles.bar}>
