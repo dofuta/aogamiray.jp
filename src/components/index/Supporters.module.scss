@@ -1,7 +1,12 @@
 .container {
     .items {
-        display: flex;
-        justify-content: space-between;
+        @include mobile {
+            margin-top: vw_mobile(40);
+        }
+        @include pc {
+            display: flex;
+            justify-content: space-between;
+        }
         .item {
             .imageWrapper {
                 border-radius: 1rem;
@@ -9,6 +14,9 @@
                 background-color: $white;
                 position: relative;
                 @include mobile {
+                    width: 100%;
+                    height: vw_mobile(200);
+                    margin-bottom: vw_mobile(20);
                 }
                 @include pc {
                     width: vw_pc(250);

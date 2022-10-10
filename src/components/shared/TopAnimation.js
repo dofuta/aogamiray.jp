@@ -58,6 +58,7 @@ export default function Links(props) {
                         <span className={styles.transparent}>ヶ</span>
                         <span className={styles.transparent}>島</span>
                         <span className={styles.transparent}>の</span>
+                        <br class='only_sp'/>
                         <span className={styles.transparent}>み</span>
                         <span className={styles.transparent}>ら</span>
                         <span className={styles.transparent}>い</span>

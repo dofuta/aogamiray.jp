@@ -1,11 +1,11 @@
 .container {
-    display: flex;
-    justify-content: space-between;
     @include mobile {
         padding: vw_mobile(20);
         margin-top: vw_mobile(120);
     }
     @include pc {
+        display: flex;
+        justify-content: space-between;
         padding: vw_pc(20) vw_pc(40);
         margin-top: vw_pc(120);
     }
@@ -29,7 +29,7 @@
                 cursor: pointer;
                 @include mobile {
                     text-align: center;
-                    padding: vw_mobile(10);
+                    padding: vw_mobile(15);
                     @include font-size_mobile(18);
                 }
                 @include pc {
@@ -44,6 +44,9 @@
     .logoArea {
         .logoSVG {
             @include mobile {
+                display: block;
+                margin: vw_mobile(50) auto;
+                width: vw_mobile(150);
             }
             @include pc {
                 width: vw_pc(150);

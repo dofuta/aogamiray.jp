@@ -7,14 +7,19 @@
             z-index: 1;
             position: absolute;
             width: 100%;
-            height: vw_pc(480);
+            @include mobile {
+                height: vw_mobile(200);
+            }
+            @include pc {
+                height: vw_pc(480);
+            }
             background-color: $transparent-black;
             display: flex;
             .copy {
                 position: absolute;
                 @include mobile {
-                    bottom: vw_mobile(40);
-                    left: vw_mobile(40);
+                    bottom: vw_mobile(20);
+                    left: vw_mobile(20);
                 }
                 @include pc {
                     bottom: vw_pc(40);
@@ -25,6 +30,7 @@
                     line-height: 1.4;
                     font-weight: $bold;
                     @include mobile {
+                        @include font-size_mobile(24);
                     }
                     @include pc {
                         @include font-size_pc(50);
@@ -35,6 +41,7 @@
                 .button {
                     position: absolute;
                     @include mobile {
+                        display: none;
                     }
                     @include pc {
                         right: vw_pc(40);

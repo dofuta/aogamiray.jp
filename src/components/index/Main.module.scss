@@ -1,6 +1,10 @@
 .container {
     transition: color 0.5s, opacity 0.5s, background-color 0.5s;
-    display: flex;
+    @include mobile {
+    }
+    @include pc {
+        display: flex;
+    }
     .sideBar {
         @include mobile {
             display: none;

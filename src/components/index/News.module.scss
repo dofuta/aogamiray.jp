@@ -7,6 +7,8 @@
           background-color: white;
           display: block;
           @include mobile {
+            margin-bottom: vw_mobile(20);
+            padding: vw_mobile(20);
           }
           @include pc {
               margin-bottom: vw_pc(12);
@@ -21,17 +23,21 @@
               margin-right: 0;
           }
           .top {
-              display: flex;
-              align-items: center;
+                @include pc {
+                    display: flex;
+                    align-items: center;
+                }
               .date {
                   background-color: $background-light-gray;
                   font-family: 'Poppins', sans-serif;
                   color: $light-gray;
+                  border-radius: 50em;
                   @include mobile {
+                    display: inline-block;
+                    padding: vw_mobile(2) vw_mobile(10);
                   }
                   @include pc {
                       margin-right: vw_pc(15);
-                      border-radius: 50em;
                       @include font-size_pc(12);
                       line-height: vw_pc(20);
                       padding: vw_pc(2) vw_pc(10);
@@ -41,30 +47,32 @@
                   font-weight: $bold;
                   color: $black;
                   @include mobile {
-                      @include font-size_mobile(24);
+                        margin: vw_mobile(10) 0;
+                      @include font-size_mobile(18);
                   }
                   @include pc {
                       @include font-size_pc(16);
                   }
               }
           }
-          .bottom {
-                  @include mobile {
-                      margin-top: vw_mobile(8);
-                  }
-                  @include pc {
-                      margin-top: vw_pc(8);
-                  }
-              .content {
-                  @include mobile {
-                      @include font-size_mobile(14);
-                  }
-                  @include pc {
-                      @include font-size_pc(14);
-                      line-height: vw_pc(24);
-                  }
-              }
-          }
-      }
-  }
+            .bottom {
+                @include mobile {
+                    margin-top: vw_mobile(8);
+                }
+                @include pc {
+                    margin-top: vw_pc(8);
+                }
+                .content {
+                    line-height: 1.4;
+                    @include mobile {
+                        @include font-size_mobile(16);
+                    }
+                    @include pc {
+                        @include font-size_pc(16);
+                        line-height: vw_pc(24);
+                    }
+                }
+            }
+        }
+    }
 }

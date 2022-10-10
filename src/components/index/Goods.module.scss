@@ -4,9 +4,17 @@
     justify-content: space-between;
     display: flex;
     width: 100%;
+    overflow: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar{
+      display: none;
+    }
     .item {
       position: relative;
       @include mobile {
+        width: 100%;
+        margin-right: vw_mobile(20);
       }
       @include pc {
         width: 28%;
@@ -14,8 +22,8 @@
       .imageWrapper {
         position: relative;
         @include mobile {
-          width: vw_mobile(340);
-          height: vw_mobile(340);
+          width: vw_mobile(280);
+          height: vw_mobile(280);
         }
         @include pc {
           width: vw_pc(270);
@@ -27,6 +35,7 @@
         color: $gray;
         @include mobile {
           @include font-size_mobile(16);
+          padding: vw_mobile(10) 0;
         }
         @include pc {
           padding: vw_pc(10) 0;
