@@ -125,7 +125,7 @@ export async function getStaticProps({ query }) {
         id: 'supporters',
         title: 'SUPPORTERS',
         subtitle: 'アオガミライのサポーター',
-        description: 'アオガミライをご支援頂いているみなさまの一覧です。',
+        description: 'アオガミライにご協力頂いているみなさまの一覧です。',
         url: '',
     }
     const people = [
@@ -186,14 +186,13 @@ export async function getStaticProps({ query }) {
             image: '/images/supporters/takarajima.webp',
         },
         {
-            title: '青ヶ島村',
-            url: 'http://www.vill.aogashima.tokyo.jp/',
-            image: '/images/supporters/aogashima.webp',
+            title: 'かいゆう丸',
+            url: 'https://kaiyumaru.info/',
+            image: '/images/supporters/kaiyu.webp',
         },
         {
-            title: 'suzuri',
-            url: 'https://suzuri.jp/kaechan0106/',
-            image: '/images/supporters/suzuri.webp',
+            title: 'ねっこめ',
+            image: '/images/supporters/nekkome.webp',
         },
     ]
     return {

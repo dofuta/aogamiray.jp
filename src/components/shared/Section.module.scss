@@ -61,7 +61,7 @@
         }
         &__left {
             @include pc {
-                width: 50%;
+                width: 60%;
             }
             @include mobile {
                 width: 100%;
@@ -80,7 +80,7 @@
         }
         &__right {
             @include pc {
-                width: 50%;
+                width: 40%;
             }
             @include mobile {
                 width: 100%;
