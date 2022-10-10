@@ -6,7 +6,7 @@ import splitbee from '@splitbee/web'
 import StartAnimation from 'src/components/shared/StartAnimation'
 
 export default function Home(props) {
-    // splitbee.init()
+    splitbee.init()
     return (
         <>
             <Head>
@@ -38,7 +38,7 @@ export default function Home(props) {
                 <meta property='og:site_name' content='Aogamiray | アオガミライ' />
                 <meta property='og:image' content='https://www.aogamiray.com/ogp.jpg' />
             </Head>
-            {/* <StartAnimation /> */}
+            <StartAnimation />
             <Main
                 topContent={props.topContent}
                 snsIcons={props.snsIcons}

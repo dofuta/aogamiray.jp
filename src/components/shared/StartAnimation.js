@@ -16,7 +16,7 @@ export default function Links(props) {
 
     const setAnimation = () => {
         let tl = gsap.timeline({})
-        tl.add('start')
+        tl.add('first')
         tl.set('#textAnimation span', {
             opacity: 0,
             scale: 0,
@@ -30,7 +30,7 @@ export default function Links(props) {
                 delay: 1,
                 ease: 'power2',
             },
-            'start',
+            'first',
         )
         tl.to(
             '#textAnimation span',
@@ -38,7 +38,7 @@ export default function Links(props) {
                 keyframes: [
                     {
                         width: 'auto',
-                        delay: 2.5,
+                        delay: 2,
                         duration: 0.5,
                         ease: 'power2',
                     },
@@ -52,13 +52,13 @@ export default function Links(props) {
                     },
                 ],
             },
-            'start',
+            'first',
         )
         tl.to('#containerAnimation', {
             keyframes: [
                 {
                     opacity: 0,
-                    delay: 6,
+                    duration: 1,
                 },
                 {
                     display: 'none',
