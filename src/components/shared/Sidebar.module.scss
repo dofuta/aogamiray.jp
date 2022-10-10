@@ -38,9 +38,11 @@
         }
         .content {
             .link {
+                transition: all 0.3s ease;
                 cursor: pointer;
                 position: relative;
                 color: $border-light-gray;
+                line-height: 2;
                 @include mobile {
                 }
                 @include pc {
@@ -58,6 +60,7 @@
                     }
                 }
                 &.on {
+                    transition: all 0.3s ease;
                     color: $black;
                     &:after {
                         border-color: $black;

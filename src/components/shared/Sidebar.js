@@ -1,29 +1,41 @@
 import styles from './Sidebar.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
+import {useState} from 'react'
 
 export default function Sidebar(props) {
+    const [currentSelect, setCurrentSelect] = useState('')
     return (
         <div className={props.className}>
             <div className={styles.container}>
                 <div className={styles.logoArea}>
                     <div className={styles.imageWrapper}>
-                        <Image src='/icons/logo_short.webp' layout='fill' objectFit='cover' />
+                        <Image src='/icons/logo_short.png' layout='fill' objectFit='cover' />
                     </div>
                 </div>
                 <div className={styles.bar}>
                     <ul className={styles.content}>
                         <Link href='#people'>
-                            <li className={`${styles.link} ${styles.on}`}>PEOPLE</li>
+                            <li 
+                            onClick={() => setCurrentSelect('people')}
+                            className={`${styles.link} ${currentSelect == 'people' ? styles.on : ''}`}>PEOPLE</li>
                         </Link>
                         <Link href='#goods'>
-                            <li className={styles.link}>GOODS</li>
+                            <li
+                            onClick={() => setCurrentSelect('goods')}
+                            className={`${styles.link} ${currentSelect == 'goods' ? styles.on : ''}`}>GOODS</li>
                         </Link>
                         <Link href='#news'>
-                            <li className={styles.link}>NEWS</li>
+                            <li
+                            onClick={() => setCurrentSelect('news')}
+
+                            className={`${styles.link} ${currentSelect == 'news' ? styles.on : ''}`}>NEWS</li>
                         </Link>
                         <Link href='#supporters'>
-                            <li className={styles.link}>SUPPORTERS</li>
+                            <li
+                            onClick={() => setCurrentSelect('supporters')}
+
+                            className={`${styles.link} ${currentSelect == 'supporters' ? styles.on : ''}`}>SUPPORTERS</li>
                         </Link>
                     </ul>
                 </div>

@@ -42,14 +42,18 @@
         }
     }
     .logoArea {
-        .logoSVG {
+        .imageWrapper {
+            position: relative;
             @include mobile {
                 display: block;
-                margin: vw_mobile(50) auto;
+                margin: 0 auto;
+                margin-top: vw_mobile(50);
                 width: vw_mobile(150);
+                height: vw_mobile(150);
             }
             @include pc {
                 width: vw_pc(150);
+                height: vw_pc(100);
             }
         }
     }

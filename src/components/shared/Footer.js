@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import styles from './Footer.module.scss'
-import LogoSVG from '/public/icons/logo.svg'
 import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin'
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
+import Image from 'next/image'
 // import useWindowDimensions from 'src/services/windowDimentions'
 
 export default function Footer(props) {
@@ -28,7 +28,9 @@ export default function Footer(props) {
         <div className={styles.container}>
             <div className={styles.row}>
                 <ul className={styles.column}>
-                    <li onClick={() => scrollToSection('people')}>PEOPLE</li>
+                    <Link href='#people'>
+                        <li>PEOPLE</li>
+                    </Link>
                     <Link href='#goods'>
                         <li>GOODS</li>
                     </Link>
@@ -43,7 +45,13 @@ export default function Footer(props) {
                 </ul>
             </div>
             <div className={styles.logoArea}>
-                <LogoSVG className={styles.logoSVG} />
+                <div className={styles.imageWrapper}>
+                    <Image
+                        src='/icons/logo.png'
+                        layout='fill'
+                        objectFit='cover'
+                    />
+                </div>
             </div>
         </div>
     )
