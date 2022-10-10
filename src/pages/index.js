@@ -102,15 +102,15 @@ export async function getStaticProps({ query }) {
         id: 'people',
         title: 'PEOPLE',
         subtitle: '青ヶ島の人びと',
-        description: 'ここに説明が入ります。',
+        description: '青ヶ島に暮らす「ヒト」に焦点をあてたWEBメディアです。',
         buttonTitle: 'メディアを見る',
         url: 'https://www.humansofaogashima.com/',
     }
     const goodsContent = {
         id: 'goods',
         title: 'GOODS',
-        subtitle: '青ヶ島のグッズ',
-        description: 'ここに説明が入ります。',
+        subtitle: 'Aogamirayのグッズ',
+        description: 'Aogamirayで特別な商品を作っています。',
         buttonTitle: 'ショップを見る',
         url: 'https://suzuri.jp/kaechan0106/',
     }

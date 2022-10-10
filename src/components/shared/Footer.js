@@ -4,10 +4,12 @@ import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin'
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import Image from 'next/image'
-// import useWindowDimensions from 'src/services/windowDimentions'
+import { currentSelectAtom } from 'src/services/atom'
+import { useRecoilState } from 'recoil'
+
 
 export default function Footer(props) {
-    // const { height, width } = useWindowDimensions()
+    const [currentSelect, setCurrentSelect] = useRecoilState(currentSelectAtom)
 
     useEffect(() => {
         if (window) {
@@ -29,18 +31,26 @@ export default function Footer(props) {
             <div className={styles.row}>
                 <ul className={styles.column}>
                     <Link href='#people'>
-                        <li>PEOPLE</li>
+                        <li
+                            onClick={() => setCurrentSelect('people')}
+                        >PEOPLE</li>
                     </Link>
                     <Link href='#goods'>
-                        <li>GOODS</li>
+                        <li
+                            onClick={() => setCurrentSelect('goods')}
+                        >GOODS</li>
                     </Link>
                 </ul>
                 <ul className={styles.column}>
                     <Link href='#news'>
-                        <li>NEWS</li>
+                        <li
+                            onClick={() => setCurrentSelect('news')}
+                        >NEWS</li>
                     </Link>
                     <Link href='#supporters'>
-                        <li>SUPPORTERS</li>
+                        <li
+                            onClick={() => setCurrentSelect('supporters')}
+                        >SUPPORTERS</li>
                     </Link>
                 </ul>
             </div>

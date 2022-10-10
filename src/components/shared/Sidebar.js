@@ -1,10 +1,13 @@
 import styles from './Sidebar.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
-import {useState} from 'react'
+import { currentSelectAtom } from 'src/services/atom'
+import { useRecoilState } from 'recoil'
+
 
 export default function Sidebar(props) {
-    const [currentSelect, setCurrentSelect] = useState('')
+    const [currentSelect, setCurrentSelect] = useRecoilState(currentSelectAtom)
+
     return (
         <div className={props.className}>
             <div className={styles.container}>

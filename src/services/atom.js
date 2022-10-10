@@ -3,10 +3,16 @@ import { recoilPersist } from 'recoil-persist'
 
 const { persistAtom } = recoilPersist()
 
-const darkModeAtom = atom({
-    key: 'darkMode',
-    default: null,
-    effects_UNSTABLE: [persistAtom],
+// const currentSelectAtom = atom({
+//     key: 'currentSelect',
+//     default: '',
+//     effects_UNSTABLE: [persistAtom],
+// })
+
+const currentSelectAtom = atom({
+    key: 'currentSelect',
+    default: '',
+    effects_UNSTABLE: [],
 })
 
 const windowDimensionsAtom = atom({
@@ -27,4 +33,4 @@ const scrollPositionsAtom = atom({
     effects_UNSTABLE: [],
 })
 
-export { darkModeAtom, windowDimensionsAtom, scrollPositionsAtom }
+export { currentSelectAtom, windowDimensionsAtom, scrollPositionsAtom }
