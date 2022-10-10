@@ -28,15 +28,15 @@ export default function Home(props) {
                     sizes='16x16'
                     href='/favicon/favicon-16x16.png'
                 ></link>
-                <meta property='og:url' content='https://www.aogamiry.jp' />
+                <meta property='og:url' content='https://www.aogamiray.com' />
                 <meta property='og:type' content='web' />
-                <meta property='og:title' content='Aogamiry | アオガミライ' />
+                <meta property='og:title' content='Aogamiray | アオガミライ' />
                 <meta
                     property='og:description'
                     content='アオガミライは、青ヶ島に暮らす「ヒト」に焦点をあてるWEBメディアです。'
                 />
-                <meta property='og:site_name' content='Aogamiry | アオガミライ' />
-                <meta property='og:image' content='https://www.aogamiry.jp/ogp.jpg' />
+                <meta property='og:site_name' content='Aogamiray | アオガミライ' />
+                <meta property='og:image' content='https://www.aogamiray.jp/ogp.jpg' />
             </Head>
             {/* <StartAnimation /> */}
             <Main
