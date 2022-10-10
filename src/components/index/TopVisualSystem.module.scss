@@ -62,7 +62,6 @@
         }
         .children {
             position: relative;
-            width: 100vw;
             @include mobile {
             }
             @include pc {
