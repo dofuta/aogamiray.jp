@@ -36,7 +36,7 @@ export default function Home(props) {
                     content='アオガミライは、青ヶ島に暮らす「ヒト」に焦点をあてるWEBメディアです。'
                 />
                 <meta property='og:site_name' content='Aogamiray | アオガミライ' />
-                <meta property='og:image' content='https://www.aogamiray.jp/ogp.jpg' />
+                <meta property='og:image' content='https://www.aogamiray.com/ogp.jpg' />
             </Head>
             {/* <StartAnimation /> */}
             <Main
