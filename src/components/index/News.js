@@ -8,15 +8,14 @@ export default function News(props) {
                     {props.items.map((item, index) => (
                         <div key={index} href={item.url} className={styles.new}>
                             <div className={styles.top}>
-                                <div className={styles.date}>
-                                    {item.date}
-                                </div>
-                                <h3 className={styles.title}>
-                                    {item.title}
-                                </h3>
+                                <div className={styles.date}>{item.date}</div>
+                                <h3 className={styles.title}>{item.title}</h3>
                             </div>
                             <div className={styles.bottom}>
-                                <p className={styles.content} dangerouslySetInnerHTML={{__html: item.content}}/>
+                                <p
+                                    className={styles.content}
+                                    dangerouslySetInnerHTML={{ __html: item.content }}
+                                />
                             </div>
                         </div>
                     ))}

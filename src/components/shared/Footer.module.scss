@@ -10,7 +10,12 @@
         margin-top: vw_pc(120);
     }
     .row {
-        display: flex;
+        @include mobile {
+            margin: 0 auto;
+        }
+        @include pc {
+            display: flex;
+        }
         .column {
             @include mobile {
             }
@@ -22,11 +27,13 @@
             }
             li {
                 cursor: pointer;
-                border-right: 1px solid $black;
                 @include mobile {
+                    text-align: center;
+                    padding: vw_mobile(10);
                     @include font-size_mobile(18);
                 }
                 @include pc {
+                    border-right: 1px solid $black;
                     padding: vw_pc(10) 0;
                     padding-right: vw_pc(80);
                     @include font-size_pc(18);
@@ -39,7 +46,7 @@
             @include mobile {
             }
             @include pc {
-                width: vw_pc(100);
+                width: vw_pc(150);
             }
         }
     }

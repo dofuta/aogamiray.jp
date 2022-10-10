@@ -3,7 +3,6 @@ import CircleButton from '../shared/CircleButton'
 import styles from './People.module.scss'
 
 export default function People(props) {
-
     return (
         <div className={props.className}>
             <div className={styles.container}>
@@ -11,7 +10,8 @@ export default function People(props) {
                     <div className={styles.imageCover}>
                         <div className={styles.copy}>
                             <p className={styles.copyContent}>
-                                Humans of Aogashima<br/>
+                                Humans of Aogashima
+                                <br />
                                 青ヶ島の人びと
                             </p>
                         </div>
@@ -27,11 +27,7 @@ export default function People(props) {
                     {props.items.map((item, i) => (
                         <div className={styles.item} key={i}>
                             <div className={styles.imageWrapper}>
-                                <Image
-                                    src={item.image}
-                                    layout='fill'
-                                    objectFit='cover'
-                                />
+                                <Image src={item.image} layout='fill' objectFit='cover' />
                             </div>
                         </div>
                     ))}

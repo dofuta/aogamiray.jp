@@ -2,7 +2,7 @@
     cursor: pointer;
     display: flex;
     position: relative;
-    display: inline-block;
+    align-items: center;
     @include mobile {
         border-radius: vw_mobile(30);
     }
@@ -21,6 +21,7 @@
     span {
         font-weight: $bold;
         @include mobile {
+            padding-left: vw_mobile(16);
             @include font-size_mobile(16);
         }
         @include pc {

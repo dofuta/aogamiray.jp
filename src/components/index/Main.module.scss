@@ -1,7 +1,24 @@
 .container {
     transition: color 0.5s, opacity 0.5s, background-color 0.5s;
-    .top {
-            width: 100vw;
+    display: flex;
+    .sideBar {
+        @include mobile {
+            display: none;
+        }
+        @include pc {
+            width: vw_pc(140);
+        }
+    }
+    .content {
+        position: relative;
+        @include mobile {
+
+        }
+        @include pc {
+            width: calc(100vw - vw_pc(140));
+        }
+        .top {
+            width: 100%;
             height: 100vh;
             // filter: contrast(270%) brightness(100%);
             // background:
@@ -34,14 +51,6 @@
                         line-height: vw_mobile(45);
                     }
                 }
-            }
-    }
-    &.dark {
-        background-color: $dark-black;
-        .bottom {
-            p {
-                color: $white;
-                opacity: 85%;
             }
         }
     }

@@ -1,0 +1,69 @@
+.container {
+    position: fixed;
+    @include mobile {
+    }
+    @include pc {
+        width: vw_pc(140);
+        height: 100vh;
+    }
+    .logoArea {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include mobile {
+        }
+        @include pc {
+            width: 100%;
+            min-height: vw_pc(130);
+        }
+        .imageWrapper {
+            position: relative;
+            @include mobile {
+            }
+            @include pc {
+                width: vw_pc(80);
+                height: vw_pc(80);
+            }
+        }
+    }
+    .bar {
+        border: 1px solid $border-light-gray;
+        height: 100%;
+        background-color: $background-white;
+        @include mobile {
+        }
+        @include pc {
+            padding: vw_pc(15);
+            padding-top: vw_pc(120);
+        }
+        .content {
+            .link {
+                cursor: pointer;
+                position: relative;
+                color: $border-light-gray;
+                @include mobile {
+                }
+                @include pc {
+                    margin-bottom: vw_pc(20);
+                    @include font-size_pc(10);
+                }
+                &:after {
+                    content: '';
+                    @include pc {
+                        position: absolute;
+                        right: 0;
+                        bottom: vw_pc(5);
+                        width: vw_pc(10);
+                        border: 0.5px solid $border-light-gray;
+                    }
+                }
+                &.on {
+                    color: $black;
+                    &:after {
+                        border-color: $black;
+                    }
+                }
+            }
+        }
+    }
+}

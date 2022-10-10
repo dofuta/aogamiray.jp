@@ -2,8 +2,8 @@
 import Main from 'src/components/index/Main'
 import Navbar from 'src/components/shared/Navbar'
 import Head from 'next/head'
-import Footer from 'src/components/shared/Footer'
 import splitbee from '@splitbee/web'
+import StartAnimation from 'src/components/shared/StartAnimation'
 
 export default function Home(props) {
     // splitbee.init()
@@ -11,35 +11,53 @@ export default function Home(props) {
         <>
             <Head>
                 <title>Aogamiry | アオガミライ</title>
-                <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png"></link>
-                <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png"></link>
-                <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png"></link>
-                <meta property="og:url" content="https://www.aogamiry.jp" />
-                <meta property="og:type" content="web" />
-                <meta property="og:title" content="Aogamiry | アオガミライ" />
-                <meta property="og:description" content="アオガミライは、青ヶ島に暮らす「ヒト」に焦点をあてるWEBメディアです。" />
-                <meta property="og:site_name" content="Aogamiry | アオガミライ" />
-                <meta property="og:image" content="https://www.aogamiry.jp/ogp.jpg" />
+                <link
+                    rel='apple-touch-icon'
+                    sizes='180x180'
+                    href='/favicon/apple-touch-icon.png'
+                ></link>
+                <link
+                    rel='icon'
+                    type='image/png'
+                    sizes='32x32'
+                    href='/favicon/favicon-32x32.png'
+                ></link>
+                <link
+                    rel='icon'
+                    type='image/png'
+                    sizes='16x16'
+                    href='/favicon/favicon-16x16.png'
+                ></link>
+                <meta property='og:url' content='https://www.aogamiry.jp' />
+                <meta property='og:type' content='web' />
+                <meta property='og:title' content='Aogamiry | アオガミライ' />
+                <meta
+                    property='og:description'
+                    content='アオガミライは、青ヶ島に暮らす「ヒト」に焦点をあてるWEBメディアです。'
+                />
+                <meta property='og:site_name' content='Aogamiry | アオガミライ' />
+                <meta property='og:image' content='https://www.aogamiry.jp/ogp.png' />
             </Head>
-            <Navbar />
-            <Main topContent={props.topContent} snsIcons={props.snsIcons} peopleContent={props.peopleContent} goodsContent={props.goodsContent} newsContent={props.newsContent} supportersContent={props.supportersContent} people={props.people} goods={props.goods} news={props.news} supporters={props.supporters}/>
-            <Footer />
+            {/* <StartAnimation /> */}
+            <Main
+                topContent={props.topContent}
+                snsIcons={props.snsIcons}
+                peopleContent={props.peopleContent}
+                goodsContent={props.goodsContent}
+                newsContent={props.newsContent}
+                supportersContent={props.supportersContent}
+                people={props.people}
+                goods={props.goods}
+                news={props.news}
+                supporters={props.supporters}
+            />
         </>
     )
 }
 
 export async function getStaticProps({ query }) {
     const topContent = {
-            title: '青ヶ島の未来をつなぐ',
-            description:
-                `東京、青ヶ島。<br/><br/>
-                活火山によって作られたこのカルデラ島は、<br/>
-                その地形から、開発が難しく<br/>手付かずの自然と信仰が残る島。<br/><br/>
-                息を呑むほどの星空や<br/>魅力的な村の人々。<br/><br/>
-                青ヶ島の魅力をもっと知ってほしい。<br/>
-                そんな思いからアオガミライを始めました。`,
-            copy:
-                `私たちが日常を過ごす青ヶ島には<br/>
+        copy: `私たちが日常を過ごす青ヶ島には<br/>
                 多くの魅力的な人々がいます。アオガミライは<br/>
                 青ヶ島に暮らす「ヒト」に焦点をあてるWEBメディアです。<br/>
                 とってもディープな青ヶ島の魅力を伝える為につくりました。<br/>
@@ -51,8 +69,8 @@ export async function getStaticProps({ query }) {
                 来島できない人もいるなかで、「それでも青ヶ島と関わりたい」<br/>
                 「繋がりを持ちたい」と考える方々に<br/>
                 アオガミライを通じて青ヶ島をもっと近くに<br/>
-                感じてもらえたらと思います。`
-            }
+                感じてもらえたらと思います。`,
+    }
     const snsIcons = [
         {
             id: 1,
@@ -70,7 +88,7 @@ export async function getStaticProps({ query }) {
             url: 'https://line.me/R/ti/p/@420cgivm',
         },
         {
-            id:4 ,
+            id: 4,
             title: 'Facebook',
             url: 'https://www.facebook.com/aogamiray.inc/',
         },
@@ -93,7 +111,7 @@ export async function getStaticProps({ query }) {
         title: 'GOODS',
         subtitle: '青ヶ島のグッズ',
         description: 'ここに説明が入ります。',
-        buttonTitle: 'メディアを見る',
+        buttonTitle: 'ショップを見る',
         url: 'https://suzuri.jp/kaechan0106/',
     }
     const newsContent = {
@@ -145,35 +163,38 @@ export async function getStaticProps({ query }) {
         {
             title: 'Webサイトを公開しました。',
             date: '2022.10.10',
-            content: 'Webサイトを公開しました！<br/>Webサイトを公開しました！Webサイトを公開しました！Webサイトを公開しました！Webサイトを公開しました！'
+            content:
+                'Webサイトを公開しました！<br/>Webサイトを公開しました！Webサイトを公開しました！Webサイトを公開しました！Webサイトを公開しました！',
         },
         {
             title: 'Webサイトを公開しました。',
             date: '2022.10.10',
-            content: 'Webサイトを公開しました！<br/>Webサイトを公開しました！Webサイトを公開しました！Webサイトを公開しました！Webサイトを公開しました！'
+            content:
+                'Webサイトを公開しました！<br/>Webサイトを公開しました！Webサイトを公開しました！Webサイトを公開しました！Webサイトを公開しました！',
         },
         {
             title: 'Webサイトを公開しました。',
             date: '2022.10.10',
-            content: 'Webサイトを公開しました！<br/>Webサイトを公開しました！Webサイトを公開しました！Webサイトを公開しました！Webサイトを公開しました！'
-        }        
+            content:
+                'Webサイトを公開しました！<br/>Webサイトを公開しました！Webサイトを公開しました！Webサイトを公開しました！Webサイトを公開しました！',
+        },
     ]
     const supporters = [
         {
             title: '東京宝島',
             url: 'https://www.t-treasureislands.metro.tokyo.lg.jp/',
-            image: '/images/supporters/takarajima.png'
+            image: '/images/supporters/takarajima.png',
         },
         {
             title: '青ヶ島村',
             url: 'http://www.vill.aogashima.tokyo.jp/',
-            image: '/images/supporters/aogashima.png'
+            image: '/images/supporters/aogashima.png',
         },
         {
             title: 'suzuri',
             url: 'https://suzuri.jp/kaechan0106/',
-            image: '/images/supporters/suzuri.png'
-        } 
+            image: '/images/supporters/suzuri.png',
+        },
     ]
     return {
         props: {
@@ -187,6 +208,6 @@ export async function getStaticProps({ query }) {
             goods,
             news,
             supporters,
-        }
+        },
     }
 }

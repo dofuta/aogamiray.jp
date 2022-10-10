@@ -9,18 +9,10 @@ export default function Goods(props) {
                 {props.items.map((item, i) => (
                     <div className={styles.item} key={i}>
                         <div className={styles.imageWrapper}>
-                            <Image
-                                src={item.image}
-                                layout='fill'
-                                objectFit='cover'
-                            />
+                            <Image src={item.image} layout='fill' objectFit='cover' />
                         </div>
-                        <p className={styles.title}>
-                            {item.title}
-                        </p>
-                        <p className={styles.price}>
-                            {item.price}
-                        </p>
+                        <p className={styles.title}>{item.title}</p>
+                        <p className={styles.price}>{item.price}</p>
                     </div>
                 ))}
             </div>

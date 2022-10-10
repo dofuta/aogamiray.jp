@@ -1,0 +1,74 @@
+.container {
+    .backgroundImage {
+        position: fixed;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+        z-index: -1;
+        .imageWrapper {
+            position: relative;
+            @include mobile {
+            }
+            @include pc {
+                width: 100%;
+                height: 100vh;
+            }
+        }
+    }
+    .content {
+        .circleObject {
+            background-color: $white;
+            position: relative;
+            @include mobile {
+            }
+            @include pc {
+                width: 100%;
+                height: 100vh;
+            }
+            .topAnimation {
+                position: absolute;
+                @include centerXY;
+                width: 100%;
+            }
+            .scrollArrow {
+                position: absolute;
+                bottom: vw_pc(40);
+                @include centerX;
+            }
+        }
+        .top {
+            @include mobile {
+            }
+            @include pc {
+                padding: vw_pc(100);
+                border-top-right-radius: 50%;
+            }
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            p {
+                width: 100%;;
+                text-align: center;
+                color: $white;
+                font-weight: $bold;
+                line-height: 2.8;
+                @include mobile {
+                }
+                @include pc {
+                    margin-top: vw_pc(50);
+                    @include font-size_pc(20);
+                }
+            }
+        }
+        .children {
+            position: relative;
+            width: 100vw;
+            @include mobile {
+            }
+            @include pc {
+                padding-top: vw_pc(20);
+            }
+            background-color: $background-white;
+        }
+    }
+}

@@ -2,6 +2,7 @@
     .items {
         display: flex;
         position: relative;
+        overflow: hidden;
         .imageCover {
             z-index: 1;
             position: absolute;
@@ -51,7 +52,7 @@
                     height: vw_mobile(200);
                 }
                 @include pc {
-                    width: vw_pc(255);
+                    width: vw_pc(220);
                     height: vw_pc(480);
                 }
                 width: 100px;

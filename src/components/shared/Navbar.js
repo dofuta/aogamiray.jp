@@ -78,8 +78,7 @@ export default function Navbar() {
                         <span>CONTACT</span>
                     </li>
                 </ul>
-                <div className={styles.buttonArea}>
-                </div>
+                <div className={styles.buttonArea}></div>
             </div>
         </>
     )

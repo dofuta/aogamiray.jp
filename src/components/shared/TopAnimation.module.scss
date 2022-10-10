@@ -1,0 +1,26 @@
+.container {
+    width: 100%;
+    height: 50vh;
+    z-index: 2;
+    position: relative;
+    .text {
+        color: $black;
+        position: absolute;
+        @include centerXY;
+        font-weight: $bold;
+        text-align: center;
+        width: 100%;
+        span {
+            display: inline-block;
+            @include mobile {
+                @include font-size_mobile(40);
+            }
+            @include pc {
+                @include font-size_pc(38);
+            }
+        }
+        .transparent {
+            opacity: 0;
+        }
+    }
+}
