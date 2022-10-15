@@ -47,7 +47,7 @@ export default function Links(props) {
                     {
                         y: 0,
                         opacity: 1,
-                        delay: 0,
+                        delay: 2,
                         stagger: 1,
                         opacity: 1,
                         duration: 2,
@@ -64,7 +64,7 @@ export default function Links(props) {
                     {
                         x: 0,
                         opacity: 1,
-                        delay: 0.5,
+                        delay: 2.5,
                         stagger: 1,
                         opacity: 1,
                         duration: 2,
@@ -81,7 +81,7 @@ export default function Links(props) {
                     {
                         x: 0,
                         opacity: 1,
-                        delay: 1,
+                        delay: 3,
                         stagger: 1,
                         opacity: 1,
                         duration: 2,
@@ -98,7 +98,7 @@ export default function Links(props) {
                     {
                         x: 0,
                         opacity: 1,
-                        delay: 1.5,
+                        delay: 3.5,
                         stagger: 1,
                         opacity: 1,
                         duration: 2,

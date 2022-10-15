@@ -24,7 +24,7 @@ export default function Links(props) {
         tl.to(
             '#textAnimation span',
             {
-                delay: 4,
+                delay: 6,
                 keyframes: [
                     {
                         width: 'auto',
