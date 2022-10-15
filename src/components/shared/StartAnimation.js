@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Image from 'next/image'
 import styles from './StartAnimation.module.scss'
 import { gsap } from 'gsap'
 import { useEffect } from 'react'
@@ -16,73 +16,144 @@ export default function Links(props) {
 
     const setAnimation = () => {
         let tl = gsap.timeline({})
-        tl.add('first')
-        tl.set('#textAnimation span', {
-            opacity: 0,
-            scale: 0,
-            width: 0,
-        })
-        tl.to(
-            '#firstAnimation',
+        tl.set(
+            '.imageWrapper:nth-of-type(1)',
             {
-                opacity: 1,
-                duration: 1,
-                delay: 1,
-                ease: 'power2',
-            },
-            'first',
+                opacity: 0,
+            }
+        )
+        tl.set(
+            '.imageWrapper:nth-of-type(2)',
+            {
+                opacity: 0,
+            }
+        )
+        tl.set(
+            '.imageWrapper:nth-of-type(3)',
+            {
+                opacity: 0,
+            }
+        )
+        tl.set(
+            '.imageWrapper:nth-of-type(4)',
+            {
+                opacity: 0,
+            }
         )
         tl.to(
-            '#textAnimation span',
+            '.imageWrapper:nth-of-type(1)',
             {
                 keyframes: [
                     {
-                        width: 'auto',
-                        delay: 2,
-                        duration: 0.5,
-                        ease: 'power2',
-                    },
-                    {
+                        y: 0,
                         opacity: 1,
                         delay: 0,
-                        stagger: 0.2,
-                        scale: 1,
-                        duration: 0.1,
+                        stagger: 1,
+                        opacity: 1,
+                        duration: 2,
                         ease: 'power2',
                     },
                 ],
             },
-            'first',
+            'start'
         )
-        tl.to('#containerAnimation', {
-            keyframes: [
-                {
-                    opacity: 0,
-                    duration: 1,
-                },
-                {
-                    display: 'none',
-                },
-            ],
-        })
-
-        // for (let i=1; i <= length; i++) {
-        // tl.fromTo(`#textAnimation span:nth-child(${i})`, {opacity: 0}, {opacity: 1, delay: 0})
-        // }
+        tl.to(
+            '.imageWrapper:nth-of-type(2)',
+            {
+                keyframes: [
+                    {
+                        x: 0,
+                        opacity: 1,
+                        delay: 0.5,
+                        stagger: 1,
+                        opacity: 1,
+                        duration: 2,
+                        ease: 'power2',
+                    },
+                ],
+            },
+            'start'
+        )
+        tl.to(
+            '.imageWrapper:nth-of-type(3)',
+            {
+                keyframes: [
+                    {
+                        x: 0,
+                        opacity: 1,
+                        delay: 1,
+                        stagger: 1,
+                        opacity: 1,
+                        duration: 2,
+                        ease: 'power2',
+                    },
+                ],
+            },
+            'start'
+        )
+        tl.to(
+            '.imageWrapper:nth-of-type(4)',
+            {
+                keyframes: [
+                    {
+                        x: 0,
+                        opacity: 1,
+                        delay: 1.5,
+                        stagger: 1,
+                        opacity: 1,
+                        duration: 2,
+                        ease: 'power2',
+                    },
+                ],
+            },
+            'start'
+        )
+        tl.to(
+            '#startAnimation',
+            {
+                keyframes: [
+                    {
+                        opacity: 0,
+        
+                    },
+                    {
+                        display: 'none'
+                    }
+                ]
+            }
+        )
     }
 
     return (
-        <div className={styles.container} id='containerAnimation'>
-            <p id='textAnimation' className={styles.text}>
-                <span id='textAnimation'>
-                    <span className={styles.transparent}>ア</span>
-                    <span className={styles.transparent}>オ</span>
-                    <span className={styles.transparent}>ガ</span>
-                    <span className={styles.transparent}>ミ</span>
-                    <span className={styles.transparent}>ラ</span>
-                    <span className={styles.transparent}>イ</span>
-                </span>
-            </p>
+        <div className={styles.container} id='startAnimation'>
+            <div className={`${styles.imageWrapper} imageWrapper`}>
+                <Image
+                  src='/images/startAnimations/image01.webp'
+                  layout='fill'
+                  objectFit='cover'
+                />
+            </div>
+            <div className={`${styles.imageWrapper} imageWrapper`}>
+                <Image
+                  src='/images/startAnimations/image02.webp'
+                  layout='fill'
+                  objectFit='cover'
+                />
+            </div>
+            <div className={`${styles.imageWrapper} imageWrapper`}>
+                <Image
+                  src='/images/startAnimations/image03.webp'
+                  layout='fill'
+                  objectFit='cover'
+                />
+            </div>
+            <div className={`${styles.imageWrapper} imageWrapper`}>
+                <Image
+                  src='/images/startAnimations/image04.webp'
+                  layout='fill'
+                  objectFit='cover'
+                />
+            </div>
         </div>
     )
 }

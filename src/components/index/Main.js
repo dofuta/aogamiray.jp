@@ -13,7 +13,7 @@ export default function Main(props) {
         <div className={styles.container}>
             <Sidebar className={styles.sideBar} />
             <div className={styles.content}>
-                <div className={styles.top}>
+                <div className={styles.top} id='top'>
                     <TopVisualSystem {...props.topContent}>
                         <Section {...props.peopleContent}>
                             <People items={props.people} />

@@ -16,7 +16,6 @@ export default function Links(props) {
 
     const setAnimation = () => {
         let tl = gsap.timeline({})
-        tl.add('start')
         tl.set('#textAnimation span', {
             opacity: 0,
             scale: 0,
@@ -25,6 +24,7 @@ export default function Links(props) {
         tl.to(
             '#textAnimation span',
             {
+                delay: 4,
                 keyframes: [
                     {
                         width: 'auto',
@@ -40,8 +40,7 @@ export default function Links(props) {
                         ease: 'power2',
                     },
                 ],
-            },
-            'start',
+            }
         )
 
         // for (let i=1; i <= length; i++) {
@@ -58,7 +57,7 @@ export default function Links(props) {
                         <span className={styles.transparent}>ヶ</span>
                         <span className={styles.transparent}>島</span>
                         <span className={styles.transparent}>の</span>
-                        <br className='only_sp'/>
+                        <br className='only_sp' />
                         <span className={styles.transparent}>み</span>
                         <span className={styles.transparent}>ら</span>
                         <span className={styles.transparent}>い</span>

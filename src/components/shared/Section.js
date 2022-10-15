@@ -2,8 +2,38 @@ import Image from 'next/image'
 import Link from 'next/link'
 import CircleButton from './CircleButton'
 import styles from './Section.module.scss'
+import { useEffect } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+import { currentSelectAtom } from 'src/services/atom'
+import { useRecoilState } from 'recoil'
+
 
 export default function Section(props) {
+    const [currentSelect, setCurrentSelect] = useRecoilState(currentSelectAtom)
+
+    useEffect(() => {
+        if (window) {
+            gsap.registerPlugin(ScrollTrigger)
+            typeof tl ?? gsap.reset(tl)
+            typeof tl ?? gsap.remove(tl)
+            setAnimation()
+        }
+    }, [])
+
+    const setAnimation = () => {
+        gsap.to(`#${props.id}_link`, {
+            scrollTrigger: {
+              trigger: `#${props.id}`,
+              start: 'top-=5px',
+              id: 'people',
+              toggleActions: 'play pause resume reset',
+              scrub: true,
+              onEnter: () =>  {setCurrentSelect(props.id);},
+              onEnterBack: () =>  {setCurrentSelect(props.id);}
+            }
+          })
+    }
     return (
         <div className={styles.container} id={props.id}>
             <div className={styles.top}>
