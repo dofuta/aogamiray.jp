@@ -6,6 +6,7 @@
         @include pc {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
         }
         .item {
             .imageWrapper {
@@ -19,8 +20,9 @@
                     margin-bottom: vw_mobile(20);
                 }
                 @include pc {
-                    width: vw_pc(250);
-                    height: vw_pc(150);
+                    margin-bottom: vw_pc(30);
+                    width: vw_pc(420);
+                    height: vw_pc(200);
                 }
             }
         }

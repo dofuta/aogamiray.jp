@@ -194,6 +194,11 @@ export async function getStaticProps({ query }) {
             title: 'ねっこめ',
             image: '/images/supporters/nekkome.webp',
         },
+        {
+            title: '株式会社青ヶ島製塩事業所',
+            url: 'https://hingyanoshio.com/',
+            image: '/images/supporters/hingya.webp',
+        },
     ]
     return {
         props: {
