@@ -8,6 +8,7 @@ import InstagramSVG from 'public/icons/icon-instagram.svg'
 import XSVG from 'public/icons/icon-x.svg'
 import Section from './Section'
 import LoopLabel from './LoopLabel'
+import Link from 'next/link'
 import { useEffect } from 'react'
 
 const scrollToId = (id) => {
