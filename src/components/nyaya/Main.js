@@ -238,7 +238,11 @@ export default function Main(props) {
                     className={styles.logo}
                 />
                 <p className={styles.copyRight}>
-                    このサイトは<a href='/'>アオガミライ</a>が運営しています。
+                    このサイトは
+                    <Link href='/'>
+                        <a>アオガミライ</a>
+                    </Link>
+                    が運営しています。
                 </p>
             </footer>
         </div>
