@@ -1,0 +1,473 @@
+.container {
+    background-color: #f6f6f6;
+
+    .header {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        z-index: 2;
+        @include mobile {
+            display: none;
+        }
+        &_right {
+            position: relative;
+            width: 50%;
+            @include pc {
+                // height: vw_pc(60);
+            }
+            .triangleSVG {
+                width: 100%;
+                transform: scale(-1, 1);
+                filter: drop-shadow(3px 3px 5px #00000033);
+                @include mobile {
+                    display: none;
+                }
+            }
+            .links {
+                display: flex;
+                justify-content: space-between;
+                position: absolute;
+                color: white;
+                background-color: transparent;
+                @include pc {
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    margin: auto;
+                    height: vw_pc(20);
+                    width: vw_pc(300);
+                    transform: rotate(6.5deg);
+                    @include font-size_pc(14);
+                }
+                @include mobile {
+                    padding: vw_mobile(15);
+                    width: 100%;
+                    @include font-size_mobile(16);
+                }
+                button {
+                    color: #ddd;
+                }
+            }
+        }
+        &_left {
+            width: 50%;
+            @include pc {
+                // height: vw_pc(40);
+            }
+            .triangleSVG {
+                width: 100%;
+                filter: drop-shadow(3px 3px 5px #00000033);
+                @include mobile {
+                    display: none;
+                }
+            }
+        }
+    }
+    .main {
+        .firstView {
+            background-image: url('/images/space/firstView.png');
+            background-size: cover;
+            height: 100vh;
+            height: 100svh;
+            width: 100%;
+            position: relative;
+            @include mobile {
+                background-position-x: 42%;
+            }
+            .blackFilter {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                background-color: rgba(0, 0, 0, 0.5);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img {
+                    @include pc {
+                        width: vw_pc(130);
+                    }
+                    @include mobile {
+                        width: vw_mobile(130);
+                    }
+                }
+            }
+            .scrollDown {
+                position: absolute;
+                right: 0;
+                left: 0;
+                @include pc {
+                    bottom: vw_pc(100);
+                }
+                @include mobile {
+                    bottom: vw_mobile(100);
+                }
+            }
+        }
+        .content {
+            position: relative;
+            overflow: hidden;
+            .copy {
+                line-height: 1.8;
+                @include pc {
+                    @include font-size_pc(20);
+                    text-align: center;
+                    margin-top: vw_pc(100);
+                    margin-bottom: vw_pc(70);
+                }
+                @include mobile {
+                    @include font-size_mobile(18);
+                    text-align: center;
+                    margin-top: vw_mobile(100);
+                    margin-bottom: vw_mobile(70);
+                }
+            }
+            .table {
+                @include mobile {
+                    width: 80%;
+                    margin: 0 auto;
+                }
+                &_row {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                }
+                &_col {
+                    @include pc {
+                        width: calc(50% - vw_pc(2));
+                    }
+                    @include mobile {
+                        width: 100%;
+                    }
+                    &:nth-of-type(1) {
+                        .table_cell {
+                            background-color: #ededed;
+                            @include mobile {
+                                min-height: vw_mobile(80);
+                                margin-top: vw_mobile(20);
+                            }
+                        }
+                    }
+                }
+                &_cell {
+                    background: #fff;
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    @include pc {
+                        width: 100%;
+                        height: vw_pc(80);
+                        margin-bottom: vw_pc(4);
+                    }
+                    @include mobile {
+                        width: 100%;
+                        min-height: vw_mobile(80);
+                        margin-bottom: vw_mobile(4);
+                        padding: vw_mobile(10);
+                    }
+                    .title {
+                        text-align: center;
+                        @include pc {
+                            @include font-size_pc(16);
+                        }
+                        @include mobile {
+                            @include font-size_mobile(16);
+                        }
+                    }
+                    .text {
+                        text-align: center;
+                        display: block;
+                        line-height: 1.6;
+                        @include pc {
+                            margin-top: vw_pc(10);
+                            @include font-size_pc(12);
+                        }
+                        @include mobile {
+                            margin-top: vw_mobile(10);
+                            @include font-size_mobile(14);
+                        }
+                    }
+                    &__big {
+                        @include pc {
+                            height: vw_pc(164);
+                        }
+                        @include mobile {
+                            height: vw_mobile(164);
+                        }
+                    }
+                }
+            }
+            .facilities {
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+                flex-wrap: wrap;
+                @include mobile {
+                    justify-content: center;
+                }
+                .facility {
+                    @include mobile {
+                        margin: vw_mobile(20);
+                    }
+                    .circle {
+                        background: #ededed;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        @include pc {
+                            height: vw_pc(120);
+                            width: vw_pc(120);
+                        }
+                        @include mobile {
+                            height: vw_mobile(150);
+                            width: vw_mobile(150);
+                        }
+                        img {
+                            @include pc {
+                                width: vw_pc(60);
+                            }
+                            @include mobile {
+                                width: vw_mobile(60);
+                            }
+                        }
+                    }
+                    .title {
+                        text-align: center;
+                        @include pc {
+                            margin-top: vw_pc(15);
+                            @include font-size_pc(12);
+                        }
+                        @include mobile {
+                            margin-top: vw_mobile(15);
+                            @include font-size_mobile(14);
+                        }
+                    }
+                }
+            }
+            .textBox {
+                background-color: #ededed;
+                line-height: 1.8;
+                @include pc {
+                    width: 100%;
+                    border-radius: vw_pc(10);
+                    padding: vw_pc(50);
+                    @include font-size_pc(14);
+                }
+                @include mobile {
+                    margin-top: vw_mobile(60);
+                    width: 100%;
+                    border-radius: vw_mobile(10);
+                    padding: vw_mobile(50);
+                    @include font-size_mobile(16);
+                }
+            }
+            .contactButton {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background: #000;
+                border-radius: 100rem;
+                color: #fff;
+                margin: 0 auto;
+                position: relative;
+                overflow: hidden;
+                @include pc {
+                    width: vw_pc(300);
+                    margin-bottom: vw_pc(30);
+                    padding: vw_pc(10) vw_pc(20);
+                }
+                @include mobile {
+                    width: 80%;
+                    margin-bottom: vw_mobile(40);
+                    padding: vw_mobile(20) vw_mobile(20);
+                }
+                span {
+                    z-index: 2;
+                    @include pc {
+                        @include font-size_pc(12);
+                    }
+                    @include mobile {
+                        @include font-size_mobile(16);
+                    }
+                }
+                .snsIcon {
+                    z-index: 2;
+                    path {
+                        stroke: #fff;
+                        fill: #fff;
+                    }
+                    @include pc {
+                        height: vw_pc(15);
+                    }
+                    @include mobile {
+                        height: vw_mobile(15);
+                    }
+                }
+                .arrowIcon {
+                    z-index: 2;
+
+                    @include pc {
+                        width: vw_pc(20);
+                    }
+                    @include mobile {
+                        width: vw_mobile(20);
+                    }
+                }
+                &:hover {
+                    transition: background-color 0.3s ease-in-out;
+                    opacity: 1;
+                    span {
+                        color: #000;
+                    }
+                    &:before {
+                        transform-origin: left top;
+                        transform: scale(1, 1);
+                    }
+                    .arrowIcon path {
+                        stroke: #000 !important;
+                    }
+                    .snsIcon path {
+                        stroke: #000 !important;
+                        fill: #000;
+                    }
+                }
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 1;
+                    background: #fff;
+                    width: 100%;
+                    height: 100%;
+                    transition: transform 0.3s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+                    transform: scale(0, 1);
+                    transform-origin: right top;
+                }
+            }
+        }
+    }
+    .footer {
+        position: relative;
+        width: 100%;
+        background-color: #ededed;
+        @include pc {
+            height: vw_pc(200);
+        }
+        @include mobile {
+            margin-top: vw_mobile(200);
+            height: vw_mobile(200);
+        }
+        .logo {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            @include pc {
+                width: vw_pc(100);
+            }
+            @include mobile {
+                width: vw_mobile(120);
+            }
+        }
+        .copyRight {
+            color: #bbb;
+            text-align: center;
+            position: absolute;
+            @include pc {
+                @include font-size_pc(12);
+                bottom: vw_pc(20);
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+            @include mobile {
+                @include font-size_mobile(14);
+                bottom: vw_mobile(20);
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+            a {
+                text-decoration: underline;
+            }
+        }
+        .buttonToTop {
+            position: absolute;
+            border: 1px solid #000;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            text-align: center;
+            line-height: 1.8;
+            overflow: hidden;
+            @include pc {
+                right: vw_pc(30);
+                top: vw_pc(-130);
+                width: vw_pc(100);
+                height: vw_pc(100);
+                padding: vw_pc(10);
+                @include font-size_pc(10);
+            }
+            @include mobile {
+                right: 0;
+                left: 0;
+                margin: auto;
+                top: vw_mobile(-130);
+                width: vw_mobile(100);
+                height: vw_mobile(100);
+                padding: vw_mobile(10);
+                @include font-size_mobile(10);
+            }
+            span {
+                width: 100%;
+                z-index: 2;
+            }
+            .icon {
+                z-index: 2;
+                @include pc {
+                    width: vw_pc(20);
+                }
+                @include mobile {
+                    width: vw_mobile(20);
+                }
+            }
+
+            &:hover {
+                transition: background-color 0.3s ease-in-out;
+                span {
+                    color: #fff;
+                }
+                &:before {
+                    transform-origin: left top;
+                    transform: scale(1, 1);
+                }
+                .icon path {
+                    stroke: white !important;
+                }
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                background: black;
+                width: 100%;
+                height: 100%;
+                transition: transform 0.3s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+                transform: scale(0, 1);
+                transform-origin: right top;
+            }
+        }
+    }
+}

@@ -1,6 +1,5 @@
 // import Head from 'next/head'
 import Main from 'src/components/index/Main'
-import Navbar from 'src/components/shared/Navbar'
 import Head from 'next/head'
 import splitbee from '@splitbee/web'
 import StartAnimation from 'src/components/shared/StartAnimation'
@@ -46,6 +45,7 @@ export default function Home(props) {
                 goodsContent={props.goodsContent}
                 newsContent={props.newsContent}
                 supportersContent={props.supportersContent}
+                spaceContent={props.spaceContent}
                 people={props.people}
                 goods={props.goods}
                 news={props.news}
@@ -63,9 +63,6 @@ export async function getStaticProps({ query }) {
                 とってもディープな青ヶ島の魅力を伝える為につくりました。<br/>
                 情報が少ない青ヶ島の<br class='only_sp'/>「人」「食」「文化」など<br/>
                 かけがえのない宝物を伝え残し、<br class='only_sp'/>次の世代へ繋ぐ。<br/>
-                また、まだまだ気を緩められない<br class='only_sp'/>コロナ問題…<br/>
-                来島したい気持ちを抑えている<br class='only_sp'/>ファンの方たち、<br/>
-                その他にも体力や時間がない…<br class='only_sp'/>コストの問題など。<br/>
                 来島できない人もいるなかで、<br class='only_sp'/>「それでも青ヶ島と関わりたい」<br/>
                 「繋がりを持ちたい」<br class='only_sp'/>と考える方々に<br/>
                 アオガミライを通じて<br class='only_sp'/>青ヶ島をもっと近くに<br/>
@@ -127,6 +124,14 @@ export async function getStaticProps({ query }) {
         subtitle: 'アオガミライのサポーター',
         description: 'アオガミライにご協力頂いているみなさまの一覧です。',
         url: '',
+    }
+    const spaceContent = {
+        id: 'space',
+        title: 'SPACE',
+        subtitle: 'コワーキングスペースの運営',
+        description: '青ヶ島に新しくオープンしました。',
+        buttonTitle: '詳しく見る',
+        url: '/nyaya',
     }
     const people = [
         {
@@ -208,6 +213,7 @@ export async function getStaticProps({ query }) {
             goodsContent,
             newsContent,
             supportersContent,
+            spaceContent,
             people,
             goods,
             news,

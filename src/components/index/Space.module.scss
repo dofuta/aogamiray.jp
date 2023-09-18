@@ -1,0 +1,39 @@
+.container {
+    .box {
+        background-image: url('/images/space/exterior.webp');
+        background-size: cover;
+        position: relative;
+        @include pc {
+            height: vw_pc(340);
+            width: 100%;
+        }
+        @include mobile {
+            height: vw_mobile(340);
+            width: 100%;
+        }
+        .logo {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            top: 0;
+            margin: auto;
+            @include pc {
+                height: vw_pc(80);
+            }
+            @include mobile {
+                height: vw_mobile(80);
+            }
+        }
+        .button {
+            position: absolute;
+            @include mobile {
+                display: none;
+            }
+            @include pc {
+                right: vw_pc(40);
+                bottom: vw_pc(40);
+            }
+        }
+    }
+}
