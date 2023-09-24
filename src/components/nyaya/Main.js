@@ -142,10 +142,10 @@ export default function Main(props) {
                                 </div>
                                 <div className={styles.table_col}>
                                     <div className={styles.table_cell}>
-                                        <p className={styles.title}>1h / ¥500</p>
+                                        <p className={styles.title}>1時間 ¥2,000</p>
                                     </div>
                                     <div className={styles.table_cell}>
-                                        <p className={styles.title}>フリータイム / ￥2,000</p>
+                                        <p className={styles.title}>3時間 ￥5,000</p>
                                     </div>
                                 </div>
                             </div>
