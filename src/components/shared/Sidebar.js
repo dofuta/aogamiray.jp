@@ -29,10 +29,11 @@ export default function Sidebar(props) {
         <div className={props.className}>
             <div className={styles.container}>
                 <div className={styles.logoArea}>
-                    <div className={styles.imageWrapper}
-                                                onClick={() => {
-                                                    scrollToSection('top')
-                                                }}
+                    <div
+                        className={styles.imageWrapper}
+                        onClick={() => {
+                            scrollToSection('top')
+                        }}
                     >
                         <Image src='/icons/logo_short.png' layout='fill' objectFit='cover' />
                     </div>
@@ -60,11 +61,13 @@ export default function Sidebar(props) {
                             GOODS
                         </li>
                         <li
-                            id='news_link'
-                            onClick={() => scrollToSection('news')}
-                            className={`${styles.link} ${currentSelect == 'news' ? styles.on : ''}`}
+                            id='space_link'
+                            onClick={() => scrollToSection('space')}
+                            className={`${styles.link} ${
+                                currentSelect == 'space' ? styles.on : ''
+                            }`}
                         >
-                            NEWS
+                            SPACE
                         </li>
                         <li
                             id='supporters_link'

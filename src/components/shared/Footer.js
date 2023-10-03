@@ -45,10 +45,10 @@ export default function Footer(props) {
                 <ul className={styles.column}>
                     <li
                         onClick={() => {
-                            scrollToSection('news')
+                            scrollToSection('space')
                         }}
                     >
-                        NEWS
+                        SPACE
                     </li>
                     <li
                         onClick={() => {

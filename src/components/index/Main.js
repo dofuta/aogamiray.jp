@@ -4,6 +4,7 @@ import News from './News'
 import Goods from './Goods'
 import People from './People'
 import Supporters from './Supporters'
+import Space from './Space'
 import Sidebar from '../shared/Sidebar'
 import Footer from 'src/components/shared/Footer'
 import TopVisualSystem from 'src/components/index/TopVisualSystem'
@@ -21,8 +22,8 @@ export default function Main(props) {
                         <Section {...props.goodsContent}>
                             <Goods items={props.goods} />
                         </Section>
-                        <Section {...props.newsContent}>
-                            <News items={props.news} />
+                        <Section {...props.spaceContent}>
+                            <Space items={props.space} />
                         </Section>
                         <Section {...props.supportersContent}>
                             <Supporters items={props.supporters} />

@@ -8,7 +8,6 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { currentSelectAtom } from 'src/services/atom'
 import { useRecoilState } from 'recoil'
 
-
 export default function Section(props) {
     const [currentSelect, setCurrentSelect] = useRecoilState(currentSelectAtom)
 
@@ -24,15 +23,19 @@ export default function Section(props) {
     const setAnimation = () => {
         gsap.to(`#${props.id}_link`, {
             scrollTrigger: {
-              trigger: `#${props.id}`,
-              start: 'top-=5px',
-              id: 'people',
-              toggleActions: 'play pause resume reset',
-              scrub: true,
-              onEnter: () =>  {setCurrentSelect(props.id);},
-              onEnterBack: () =>  {setCurrentSelect(props.id);}
-            }
-          })
+                trigger: `#${props.id}`,
+                start: 'top-=5px',
+                id: 'people',
+                toggleActions: 'play pause resume reset',
+                scrub: true,
+                onEnter: () => {
+                    setCurrentSelect(props.id)
+                },
+                onEnterBack: () => {
+                    setCurrentSelect(props.id)
+                },
+            },
+        })
     }
     return (
         <div className={styles.container} id={props.id}>
@@ -46,7 +49,7 @@ export default function Section(props) {
                 <div className={styles.bottom__left}>
                     <p dangerouslySetInnerHTML={{ __html: props.description }} />
                 </div>
-                {props.url && (
+                {props.url && props.buttonTitle && (
                     <div className={styles.bottom__right}>
                         <CircleButton
                             className={styles.button}

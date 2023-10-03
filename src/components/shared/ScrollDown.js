@@ -5,7 +5,7 @@ export default function ScrollDown(props) {
         <div className={props.className}>
             <div className={styles.wrapper}>
                 <div className={styles.wrapper_inner}>
-                    <div className={styles.scroll_down}>
+                    <div className={`${styles.scroll_down} ${props.color && styles[props.color]}`}>
                         <span className={styles.arrow_down}></span>
                         <span className={styles.scroll_title}>Scroll down</span>
                     </div>

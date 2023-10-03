@@ -1,0 +1,161 @@
+$textContainerWidthPc: 1400;
+$textContainerWidthMobile: 610;
+$textContainerSpeed: 100;
+@include pc {
+    @keyframes marqueeInitial {
+        0% {
+            left: 0;
+        }
+        100% {
+            left: calc(vw_pc(-$textContainerWidthPc * 2));
+        }
+    }
+    @keyframes marqueeInitialReverse {
+        0% {
+            right: 0;
+        }
+        100% {
+            right: calc(vw_pc(-$textContainerWidthPc * 2));
+        }
+    }
+    @keyframes marquee {
+        0% {
+            left: vw_pc($textContainerWidthPc);
+        }
+        100% {
+            left: vw_pc(-$textContainerWidthPc);
+        }
+    }
+    @keyframes marqueeReverse {
+        0% {
+            right: vw_pc($textContainerWidthPc);
+        }
+        100% {
+            right: vw_pc(-$textContainerWidthPc);
+        }
+    }
+}
+@include mobile {
+    @keyframes marqueeInitial {
+        0% {
+            left: 0;
+        }
+        100% {
+            left: calc(vw_mobile(-$textContainerWidthMobile * 2));
+        }
+    }
+    @keyframes marqueeInitialReverse {
+        0% {
+            right: 0;
+        }
+        100% {
+            right: calc(vw_mobile(-$textContainerWidthMobile * 2));
+        }
+    }
+    @keyframes marquee {
+        0% {
+            left: vw_mobile($textContainerWidthMobile);
+        }
+        100% {
+            left: vw_mobile(-$textContainerWidthMobile);
+        }
+    }
+    @keyframes marqueeReverse {
+        0% {
+            right: vw_mobile($textContainerWidthMobile);
+        }
+        100% {
+            right: vw_mobile(-$textContainerWidthMobile);
+        }
+    }
+}
+
+.container {
+    z-index: 0;
+    position: relative;
+    overflow: hidden;
+    pointer-events: none;
+    @include pc {
+        width: 100%;
+        margin: 0 auto;
+    }
+    @include mobile {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .line {
+        pointer-events: none;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        @include pc {
+            height: vw_pc(278);
+            margin-top: vw_pc(25);
+        }
+        @include mobile {
+            height: vw_mobile(142);
+            margin-top: vw_mobile(15);
+        }
+        .items {
+            animation: marquee #{$textContainerSpeed}s linear infinite;
+            &:nth-of-type(1) {
+                animation: marqueeInitial #{$textContainerSpeed}s linear forwards;
+            }
+            &:nth-child(3) {
+                animation-delay: #{$textContainerSpeed/2}s;
+                @include pc {
+                    left: vw_pc($textContainerWidthPc);
+                }
+                @include mobile {
+                    left: vw_mobile($textContainerWidthMobile);
+                }
+            }
+        }
+        .items {
+            position: absolute;
+            display: flex;
+            justify-content: space-around;
+            @include pc {
+                width: vw_pc($textContainerWidthPc);
+            }
+            @include mobile {
+                margin: 0 auto;
+                width: vw_mobile($textContainerWidthMobile);
+            }
+            .item {
+                position: relative;
+                background-size: cover;
+                overflow: hidden;
+                @include pc {
+                    border-radius: vw_pc(10);
+                    width: vw_pc(320);
+                    height: vw_pc(240);
+                    margin-bottom: vw_pc(20);
+                }
+                @include mobile {
+                    border-radius: vw_mobile(10);
+                    width: vw_mobile(180);
+                    height: vw_mobile(142);
+                    margin-bottom: vw_mobile(20);
+                }
+                &:nth-of-type(4) {
+                    @include mobile {
+                        display: none;
+                    }
+                }
+                .cover {
+                    position: absolute;
+                    // z-index: 1;
+                    background: linear-gradient(180deg, rgba(217, 217, 217, 0) 80%, #f6f6f6 100%);
+
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+}
