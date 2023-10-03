@@ -2,7 +2,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import styles from './Goods.module.scss'
 export default function Goods(props) {
-    console.log(props)
     return (
         <div className={styles.container}>
             <div className={styles.goodsList}>
