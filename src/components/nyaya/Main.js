@@ -100,7 +100,7 @@ export default function Main(props) {
                                         <p className={styles.title}>1h / ¥500</p>
                                     </div>
                                     <div className={styles.table_cell}>
-                                        <p className={styles.title}>フリータイム / ￥2,000</p>
+                                        <p className={styles.title}>フリータイム / ￥2,500</p>
                                     </div>
                                 </div>
                             </div>
